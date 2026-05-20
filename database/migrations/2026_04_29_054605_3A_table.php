@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('3a_tbl', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->id();
             $table->string('fname');
             $table->string('lname');
             $table->string('mname');
             $table->string('add');
-            $table->date('dobirth');
+            $table->date('dob');
             $table->timestamps();
         });
     }

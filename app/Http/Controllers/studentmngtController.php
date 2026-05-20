@@ -8,7 +8,7 @@ class studentmngtController extends Controller
 {
 public function index()
     {   
-        $student = finalprac_jabla_viray::get();
+        $students = finalprac_jabla_viray::get();
         return view ('student.index', compact('students'));
     }
 

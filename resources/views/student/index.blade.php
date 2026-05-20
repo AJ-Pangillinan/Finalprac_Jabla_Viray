@@ -1,71 +1,77 @@
 @extends('layouts.app')
+
 @section('content')
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">{{ __('Students Information') }}</h1>
+                    <h1 class="m-0">{{ __('Student Management') }}</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title
-                                <i class="fas fa-users"></i>
-                                {{ __('Students List') }}
-                            </h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>{{ __('ID') }}</th>
-                                        <th>{{ __('Last Name') }}</th>
-                                        <th>{{ __('First Name') }}</th>
-                                        <th>{{ __('Middle Name') }}</th>
-                                        <th>{{ __('Address') }}</th>
-                                        <th>{{ __('Date of Birth') }}</th>
-                                        <th>{{ __('Actions') }}</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($students as $student)
-                                        <tr>
-                                            <td>{{ $student->id }}</td>
-                                            <td>{{ $student->name }}</td>
-                                            <td>{{ $student->fname }}</td>
-                                            <td>{{ $student->mname }}</td>
-                                            <td>{{ $student->add }}</td>
-                                            <td>{{ $student->dobirth }}</td>
-                                            <td>
-                                                <a href="{{ route('student.edit', $student->id) }}" class="btn btn-primary btn-sm">{{ __('Edit') }}</a>
+        <a href="{{ route('student.create') }}" class="btn btn-info">Add New Student</a>
+        <div class="row">
 
-                                                <form action="{{ route('student.destroy', $student->id) }}" method="POST" style="display: inline-block;">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('{{ __('Are you sure you want to delete this student?') }}')">{{ __('Delete') }}</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
+       
+                <div class="card-head">
+                     
                 </div>
 
-            </div>
+                <div class="card-body">
+
+                    
+
+                    <table class="table table-bordered table-stiped fs-1 text-black">
+
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Middle Name</th>
+                                <th>address</th>
+                                <th>Address</th>
+                                <th>Date of Birth</th>
+                            </tr>
+                        </thead>
+
+                        <tbody  >
+                            @foreach ($students as $student)
+                            <tr>
+                                
+                                <td class="">{{$student->id}}</td>
+                                <td>{{$student->fname}}</td>
+                                <td>{{$student->lname}}</td>
+                                <td>{{$student->midname}}</td>
+                                <td>{{$student->address}}</td>
+                                <td>{{$student->dob}}</td>
+                                <td> 
+                                    {{-- <span class="badge bg-success"><a href="{{  route('students.editstud', $employee->id)}}" class="btn btn-success mx-3  "><h5>Edit</h5></a></span> --}}
+                                </td>
+                                <td> 
+                                    {{-- <span class="badge bg-danger"><a href="{{  route('students.delete', $employee->id)}}" class="btn btn-danger mx-3  "><h5>Delete</h5></a></span> --}}
+                                </td>
+                                
+                            </tr>
+                            @endforeach
+                        </tbody>
+
+                    </table>
+                </div>
+                    
+
+                <div class="card-footer">
+                    
+                </div>
+             
+
             <!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
