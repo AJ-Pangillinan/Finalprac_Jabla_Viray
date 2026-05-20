@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\finalprac_jabla_viray;
-class studentmngtController extends Controller
+class studentcontroller extends Controller
 {
-public function index()
+    public function index()
     {   
         $student = finalprac_jabla_viray::get();
         return view ('student.index', compact('students'));

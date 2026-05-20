@@ -6,14 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class finalprac_jabla_viray extends Model
 {
-    use Hasfactory;
+    use HasFactory;
     protected $table = '3a_tbl';
-    protected $fillable = [
-        'id',
-        'fname',
-        'lname',
-        'mname',
-        'add',
-        'dobirth',
-    ]; 
+    protected $primaryKey = 'id';
+    protected $fillable = ['fname', 'lname', 'mname', 'add', 'dobirth'];
 }
