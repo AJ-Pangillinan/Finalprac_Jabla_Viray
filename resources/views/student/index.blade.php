@@ -21,26 +21,7 @@
                     <div class="alert alert-info">
                         This is the table for the students
                     </div>
-
-                    <div class="card">
-                        <div class="card-body p-0">
-
-                            <table class="table">
-                                <thead>
-                                </thead>
-                                <tbody>
-                                 {{-- @foreach($student) --}}
-                                    <tr>
-                                        <td>Matthew Bartolomeo</td>
-                                        <td>matthewbartolomeo@sample.com</td>
-                                    </tr>
-                                {{-- @endforeach --}}
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-
+                    
                 </div>
             </div>
             <!-- /.row -->

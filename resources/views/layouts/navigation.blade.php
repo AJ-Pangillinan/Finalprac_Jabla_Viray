@@ -28,6 +28,14 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('student.create') }}" class="nav-link">
+                    <i class="nav-icon fas fa-users"></i>
+                    <p>
+                        {{ __('Create Student') }}
+                    </p>
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a href="{{ route ('student.index') }}" class="nav-link">

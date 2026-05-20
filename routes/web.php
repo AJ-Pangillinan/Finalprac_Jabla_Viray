@@ -21,8 +21,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
-    // Route::put('profile/password', [\App\Http\Controllers\ProfileController::class, 'updatePassword'])->name('profile.update.password');
-    // Route::delete('profile', [\App\Http\Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
-    // Route::post('profile/avatar', [\App\Http\Controllers\ProfileController::class, 'updateAvatar'])->name('profile.update.avatar');
-    // Route::post('profile/avatar/remove', [\App\Http\Controllers\ProfileController::class, 'removeAvatar'])->name('profile.remove.avatar');
+    Route::put('student/{id}', [\App\Http\Controllers\studentmngtController::class, 'update'])->name('student.update');
+    Route::delete('student/{id}', [\App\Http\Controllers\studentmngtController::class, 'destroy'])->name('student.destroy');
+    Route::post('students', [\App\Http\Controllers\studentmngtController::class, 'store'])->name('student.store');
+
 });
